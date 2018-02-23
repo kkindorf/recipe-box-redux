@@ -9,7 +9,7 @@ export default function(state = [{name: 'pizza', ingredients:['cheese']}], actio
         case UPDATE_RECIPE:
         //create new copy of recipes array by using map to return each one. Once the original recipe object is found, update it's main content with the new recipe data and return the updatedRecipes arra
         let updatedRecipes = state.map((recipe, index) => {
-            if(index !== action.payload.index) {
+            if(recipe.name !== action.payload.oldName) {
                 return recipe;
             }
             recipe.name = action.payload.newName;
