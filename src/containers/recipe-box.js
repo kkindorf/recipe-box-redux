@@ -73,8 +73,8 @@ import {deleteRecipe} from '../actions/index';
                                 <label>Recipe Ingredients: <strong>{this.props.ingredients}</strong></label>
                                 <input type="text" className="form-control" id="ingredientsInput" value={this.state.newIngredients} placeholder="Update ingredients" onChange={this.onIngredientsChange}/>
                             </div>
-                            <button type="submit" className="btn btn-success pull-left" onClick={this.handleUpdatedRecipe}>Update</button>
-                            <button onClick={this.handleDeletedRecipe} type="submit" className="btn btn-danger pull-right">Delete</button>
+                            <button type="submit" className="btn btn-success" onClick={this.handleUpdatedRecipe}>Update</button>
+                            <button onClick={this.handleDeletedRecipe} type="submit" className="btn btn-danger float-right">Delete</button>
                         </form>
                     </div>
                 </div>
