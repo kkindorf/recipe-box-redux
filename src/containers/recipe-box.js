@@ -64,17 +64,17 @@ import {deleteRecipe} from '../actions/index';
      render() {
         return (
             <div>
-                <div className="card card-outline-primary mb-3 text-center">
+                <div className="card border-success mb-3 text-center">
                     <div className="card-block">
                         <form>
                             <div className="form-group">
-                                <label>Recipe Name: {this.props.name}</label>
+                                <label>Recipe Name: <strong>{this.props.name}</strong></label>
                                 <input type="text" className="form-control" id="nameInput" value={this.state.newName} placeholder="Update recipe name"  onChange={this.onNameChange}/>
-                                <label>Recipe Ingredients: {this.props.ingredients}</label>
+                                <label>Recipe Ingredients: <strong>{this.props.ingredients}</strong></label>
                                 <input type="text" className="form-control" id="ingredientsInput" value={this.state.newIngredients} placeholder="Update ingredients" onChange={this.onIngredientsChange}/>
                             </div>
-                            <button type="submit" className="btn btn-success" onClick={this.handleUpdatedRecipe}>Update</button>
-                            <button onClick={this.handleDeletedRecipe} type="submit" className="btn btn-danger">Delete</button>
+                            <button type="submit" className="btn btn-success pull-left" onClick={this.handleUpdatedRecipe}>Update</button>
+                            <button onClick={this.handleDeletedRecipe} type="submit" className="btn btn-danger pull-right">Delete</button>
                         </form>
                     </div>
                 </div>

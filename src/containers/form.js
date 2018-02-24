@@ -25,11 +25,11 @@ class Form extends Component {
     }
     render() {
         return (
-            <div className="col-sm-6">
-                <h3 className='modal-head'>Add Recipe</h3>
+            <div className="col-sm-6 add-recipe-container">
+                <h3>Add a new recipe to the list</h3>
                 <form id="newRecipe" onSubmit={this.onSubmit}>
                 <div className="form-group">
-                    <label>Description</label>
+                    <label>Name</label>
                     <input type="text" className="form-control" value={this.state.recipeName}id="description" placeholder="Add a description" onChange={this.onRecipeNameChange}/>
                     <label>Ingredients</label>
                     <input type="text" className="form-control" value={this.state.ingredients} id="ingredients" placeholder='Add ingredients seperated by commas' onChange={this.onIngredientsChange}/>

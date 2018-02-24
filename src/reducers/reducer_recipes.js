@@ -4,7 +4,7 @@ import {DELETE_RECIPE} from '../actions/index';
  
 let initialState;
 if(!localStorage.getItem('recipes')) {
-    initialState = []
+    initialState = [{name: 'Pizza', ingredients: ['tomato sauce' , 'cheese', 'pizza dough']}]
 }
 else {
     initialState = JSON.parse(localStorage.getItem('recipes'))
