@@ -1,9 +1,19 @@
 import {ADD_RECIPE} from '../actions/index';
 import {UPDATE_RECIPE} from '../actions/index';
-export default function(state = [{name: 'pizza', ingredients:['cheese']}], action) {
+import {DELETE_RECIPE} from '../actions/index';
+ 
+let initialState;
+if(!localStorage.getItem('recipes')) {
+    initialState = []
+}
+else {
+    initialState = JSON.parse(localStorage.getItem('recipes'))
+}
+export default function(state = initialState, action) {
     switch(action.type) {
         case ADD_RECIPE:
         //use spread operator here to return all object in original state array and add the new recipe object. Then return updated array copy
+        localStorage.setItem('recipes', JSON.stringify([...state, action.payload]))
         return [...state, action.payload];
 
         case UPDATE_RECIPE:
@@ -16,8 +26,18 @@ export default function(state = [{name: 'pizza', ingredients:['cheese']}], actio
             recipe.ingredients = action.payload.newIngredients;
             return recipe;
         })
+        localStorage.setItem('recipes', JSON.stringify(updatedRecipes))
         return updatedRecipes;
-    }
 
+        case DELETE_RECIPE:
+         let newRecipeList = state.filter((recipe) => {
+            if(recipe.name !== action.payload.name) {
+                return recipe;
+            }
+        })
+        localStorage.setItem('recipes', JSON.stringify(newRecipeList));
+        return newRecipeList;
+        
+    }
     return state;
 }
