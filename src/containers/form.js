@@ -26,7 +26,7 @@ class Form extends Component {
     render() {
         return (
             <div className="col-sm-6 add-recipe-container">
-                <h3>Add a new recipe to the list</h3>
+                <h3 className="text-center">Add a new recipe to the list</h3>
                 <form id="newRecipe" onSubmit={this.onSubmit}>
                 <div className="form-group">
                     <label>Name</label>

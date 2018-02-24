@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import RecipeBox from '../containers/recipe-box';
 class RecipeListContainer extends Component {
-      
         render() {
            
                 let recipeBoxes = this.props.recipes.map((recipe, index)=> {
